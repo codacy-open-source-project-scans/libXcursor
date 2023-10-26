@@ -780,10 +780,14 @@ XcursorXcFileLoad (XcursorFile	    *file,
     }
     images = XcursorImagesCreate (nimage);
     if (!images)
+    {
+	_XcursorFileHeaderDestroy (fileHeader);
 	return 0;
+    }
     comments = XcursorCommentsCreate (ncomment);
     if (!comments)
     {
+	_XcursorFileHeaderDestroy (fileHeader);
 	XcursorImagesDestroy (images);
 	return 0;
     }
