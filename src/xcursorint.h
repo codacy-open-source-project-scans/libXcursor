@@ -36,7 +36,6 @@
 #endif
 
 #include "Xcursor.h"
-#include "config.h"
 
 #include <fcntl.h>
 #ifdef O_CLOEXEC
