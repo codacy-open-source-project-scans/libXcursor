@@ -244,6 +244,8 @@ _XcursorReadFileHeader (XcursorFile *file)
 	return NULL;
     if (!_XcursorReadUInt (file, &head.header))
 	return NULL;
+    if (head.header < XCURSOR_FILE_HEADER_LEN)
+	return NULL;
     if (!_XcursorReadUInt (file, &head.version))
 	return NULL;
     if (!_XcursorReadUInt (file, &head.ntoc))
